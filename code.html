@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANANA ICE CREAM - Es Krim Sehat Tanpa Gula, Dairy, dan Gluten</title>
+    <style>
+        :root {
+            --primary: #FFD700; /* Kuning emas */
+            --secondary: #FFFFFF; /* Putih */
+            --accent: #FFA500; /* Kuning oranye */
+            --text: #333333;
+            --light-bg: #FFF9E6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: var(--secondary);
+            padding: 15px 0;
+        }
+        
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1e44a192-5edf-4bad-a2a1-5374bf4e0e01.png') center/cover no-repeat;
+            color: var(--secondary);
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .benefits {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--secondary);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 15px auto;
+        }
+        
+        .benefits-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            flex: 1 1 300px;
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        .products {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--light-bg);
+        }
+        
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            flex: 1 1 300px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 15px 0;
+        }
+        
+        .testimonials {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--secondary);
+        }
+        
+        .testimonials-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            flex: 1 1 350px;
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .stars {
+            color: var(--primary);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+        }
+        
+        footer {
+            background-color: var(--text);
+            color: var(--secondary);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                margin: 5px 0;
+            }
+        }
+        
+        /* Animasi */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SANANA ICE CREAM</div>
+        <div class="tagline">Es Krim Sehat Bebas Gula, Dairy, dan Gluten</div>
+    </header>
+    
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+    
+    <section class="hero" id="home">
+        <div class="hero-content fade-in">
+            <h1>Nikmati Manisnya Hidup Tanpa Rasa Bersalah</h1>
+            <p>Es krim pertama di Indonesia yang benar-benar bebas gula tambahan, dairy, dan gluten. Terbuat dari bahan alami limbah kulit pisang dan pemanis daun stevia.</p>
+            <a href="#produk" class="btn">Lihat Produk Kami</a>
+        </div>
+    </section>
+    
+    <section class="benefits" id="keunggulan">
+        <h2 class="section-title">Keunggulan SANANA</h2>
+        <div class="benefits-container">
+            <div class="benefit-card fade-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/865ff95b-5d41-4e02-9fa6-d1c65d5f59a8.png" alt="Ikon bebas gula dengan gambar sendok gula yang dicoret" />
+                <h3>Bebas Gula</h3>
+                <p>Menggunakan pemanis alami dari daun stevia yang tidak meningkatkan kadar gula darah, aman untuk penderita diabetes.</p>
+            </div>
+            
+            <div class="benefit-card fade-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d7ff96a0-b9f2-40e7-9f8b-0fb6d0093562.png" alt="Ikon bebas dairy dengan gambar susu yang dicoret" />
+                <h3>Bebas Dairy</h3>
+                <p>Tidak mengandung susu atau turunannya, cocok untuk mereka yang intoleransi laktosa atau vegan.</p>
+            </div>
+            
+            <div class="benefit-card fade-in">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/111df93d-bab8-4375-b67e-89ebe84502aa.png" alt="Ikon bebas gluten dengan gambar gandum yang dicoret" />
+                <h3>Bebas Gluten</h3>
+                <p>Proses produksi yang bebas gluten lainnya, aman dikonsumsi oleh penderita celiac atau sensitivitas gluten.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="products" id="produk">
+        <h2 class="section-title">Produk Kami</h2>
+        <div class="products-container">
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7407209e-3782-4dff-9401-bea555824b94.png" alt="Es krim SANANA kemasan kecil dengan warna dominan kuning dan putih, tersedia dalam berbagai rasa" />
+                </div>
+                <div class="product-info">
+                    <h3>Kemasan Kecil</h3>
+                    <p>Per cup 100ml, pilihan praktis untuk dinikmati sendiri.</p>
+                    <div class="price">Rp8.500</div>
+                    <button class="btn">Pesan Sekarang</button>
+                </div>
+            </div>
+            
+            <div class="product-card fade-in">
+                <div class="product-image">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/45350e7e-8f15-4728-8a10-3ecff480cb3f.png" alt="Es krim SANANA kemasan besar (family cup) dengan warna dominan kuning dan putih, cocok untuk berbagi" />
+                </div>
+                <div class="product-info">
+                    <h3>Family Cup</h3>
+                    <p>Kemasan besar 500ml, sempurna untuk dinikmati bersama keluarga.</p>
+                    <div class="price">Rp27.000</div>
+                    <button class="btn">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimoni">
+        <h2 class="section-title">Kata Mereka Tentang SANANA</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-header">
+                    <img class="testimonial-img" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dbcc6fe0-c8ae-4bc8-b730-c2aa25604174.png" alt="Foto profil wanita berusia 30an dengan senyum lebar" />
+                    <div>
+                        <div class="testimonial-name">Dewi Sartika</div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Sebagai penderita diabetes, saya sangat senang menemukan SANANA. Rasanya enak tapi gula darah tetap stabil. Sekeluarga sekarang bisa makan es krim bersama tanpa khawatir!"</p>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-header">
+                    <img class="testimonial-img" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e651a9db-c83e-4624-99fd-ee43b38914c9.png" alt="Foto profil pria berjas dengan ekspresi serius tapi ramah" />
+                    <div>
+                        <div class="testimonial-name">Andi Wijaya</div>
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                </div>
+                <p>"Awalnya ragu dengan konsep es krim sehat, tapi setelah mencoba Family Cup dengan anak-anak, mereka malah minta tambah! Teksturnya lembut dan rasanya natural."</p>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-header">
+                    <img class="testimonial-img" src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83b24c0a-257e-4cce-a90a-32cfc5de4b22.png" alt="Foto profil wanita muda dengan gaya rambut pendek" />
+                    <div>
+                        <div class="testimonial-name">Rina Febrianti</div>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Sebagai vegan, susah mencari es krim yang benar-benar plant-based. SANANA solusinya! Bahkan non-vegan di kantor juga suka. Kemasan kecilnya praktis buat stok di freezer."</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="kontak">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang Kami</h3>
+                <p>SANANA ICE CREAM menghadirkan es krim sehat pertama di Indonesia yang benar-benar bebas gula tambahan, dairy, dan gluten. Terbuat dari bahan alami dengan rasa yang tetap nikmat.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>Jl. Pisang Sehat No. 123, Jakarta</p>
+                <p>Telp: (021) 1234-5678</p>
+                <p>Email: halo@sananaicecream.com</p>
+                <div class="social-icons">
+                    <div class="social-icon">FB</div>
+                    <div class="social-icon">IG</div>
+                    <div class="social-icon">TW</div>
+                    <div class="social-icon">WA</div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Jam Operasional</h3>
+                <p>Senin - Jumat: 09.00 - 21.00</p>
+                <p>Sabtu - Minggu: 10.00 - 22.00</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>© 2023 SANANA ICE CREAM. Seluruh hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi scroll halus untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Efek muncul saat scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
+
